@@ -46,8 +46,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1f7bc64470553346804cdd0121f2c33, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sensHort: 300
-  sensVert: 300
+  sensHort: 500
+  sensVert: 500
   lockVertMin: -90
   lockVertMax: 90
   invert: 0
@@ -238,3 +238,6 @@ MonoBehaviour:
   jumpHeight: 10
   gravityValue: 25
   jumpsMax: 2
+  shootRate: 0.5
+  shootDist: 0
+  bullet: {fileID: 0}
