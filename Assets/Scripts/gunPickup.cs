@@ -10,7 +10,8 @@ public class gunPickup : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            other.GetComponent<playerController>().gunPickup(gunstat);
+            gameManager.instance.playerScript.gunPickup(gunstat);
+            Destroy(gameObject);
         }
     }
 }
