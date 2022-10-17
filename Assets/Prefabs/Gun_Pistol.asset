@@ -12,11 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 124cdebe10e7d2d4b911276ebec8157c, type: 3}
   m_Name: Gun_Pistol
   m_EditorClassIdentifier: 
-  shootRate: 0
-  shootDist: 0
-  shootDamage: 0
-  ammoCount: 0
-  gunModel: {fileID: 0}
+  shootRate: 0.1
+  shootDist: 15
+  shootDamage: 1
+  ammoCount: 8
+  Model: {fileID: 919132149155446097, guid: 4df3ce82db8e66645afd54ab1d5b0262, type: 3}
   sound: {fileID: 0}
   hitEffect: {fileID: 0}
   muzzleEffect: {fileID: 0}

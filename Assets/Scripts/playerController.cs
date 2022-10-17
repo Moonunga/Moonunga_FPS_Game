@@ -14,7 +14,7 @@ public class playerController : MonoBehaviour
     [SerializeField] float shootRate;
     [SerializeField] int shootDist;
     [SerializeField] int shootDamage;
-    [SerializeField] GameObject bullet;
+    [SerializeField] GameObject gunModel;
 
     private Vector3 playerVelocity;
     private int timesJumped;
@@ -75,6 +75,7 @@ public class playerController : MonoBehaviour
         shootRate = stats.shootRate;
         shootDist = stats.shootDist;
         shootDamage = stats.shootDamage;
-
+        gunModel.GetComponent<MeshFilter>().sharedMesh = stats.Model.GetComponent<MeshFilter>().sharedMesh;
+        gunModel.GetComponent<MeshRenderer>().sharedMaterial = stats.Model.GetComponent<MeshRenderer>().sharedMaterial;
     }
 }
