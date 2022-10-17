@@ -13,6 +13,7 @@ public class playerController : MonoBehaviour
 
     [SerializeField] float shootRate;
     [SerializeField] int shootDist;
+    [SerializeField] int shootDamage;
     [SerializeField] GameObject bullet;
 
     private Vector3 playerVelocity;
@@ -61,10 +62,19 @@ public class playerController : MonoBehaviour
             RaycastHit hit;
             if (Physics.Raycast(Camera.main.ViewportPointToRay(new Vector2(0.5f, 0.5f)), out hit, shootDist))
             {
-                
+                if (hit.collider.GetComponent<IDamage>() != null)
+                    hit.collider.GetComponent<IDamage>().takeDamage(shootDamage);
             }
             yield return new WaitForSeconds(shootRate);
             isShooting = false;
         }
+    }
+
+    public void gunPickup(gunStats stats)
+    {
+        shootRate = stats.shootRate;
+        shootDist = stats.shootDist;
+        shootDamage = stats.shootDamage;
+
     }
 }
