@@ -4,13 +4,14 @@ using UnityEngine;
 
 public class playerController : MonoBehaviour
 {
+    [Header("--------------")]
     [SerializeField] CharacterController controller;
-    [SerializeField] float playerSpeed ;
+    [Range(0, 10)][SerializeField] float playerSpeed ;
     [SerializeField] float jumpHeight ;
     [SerializeField] float gravityValue ;
-
     [SerializeField] int jumpsMax;
 
+    [Header("--------------")]
     [SerializeField] float shootRate;
     [SerializeField] int shootDist;
     [SerializeField] int shootDamage;
