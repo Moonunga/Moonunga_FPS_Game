@@ -383,6 +383,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 26407519}
     - target: {fileID: 2568510399560455789, guid: d5195369674770948a088bbb80ba6052, type: 3}
+      propertyPath: m_Radius
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2568510399560455789, guid: d5195369674770948a088bbb80ba6052, type: 3}
       propertyPath: m_AutoBraking
       value: 0
       objectReference: {fileID: 0}

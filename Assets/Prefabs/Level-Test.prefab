@@ -92,6 +92,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Wall(5x5) (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 2135978522893834950, guid: a2d7a06f8a66c9245a6cfb2d84b01909, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a2d7a06f8a66c9245a6cfb2d84b01909, type: 3}
 --- !u!4 &994016383249936917 stripped
@@ -153,6 +157,10 @@ PrefabInstance:
     - target: {fileID: 2135978522893834950, guid: a2d7a06f8a66c9245a6cfb2d84b01909, type: 3}
       propertyPath: m_Name
       value: Wall(5x5) (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2135978522893834950, guid: a2d7a06f8a66c9245a6cfb2d84b01909, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a2d7a06f8a66c9245a6cfb2d84b01909, type: 3}
@@ -216,6 +224,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Wall(5x5) (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 2135978522893834950, guid: a2d7a06f8a66c9245a6cfb2d84b01909, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a2d7a06f8a66c9245a6cfb2d84b01909, type: 3}
 --- !u!4 &994016383741232301 stripped
@@ -277,6 +289,10 @@ PrefabInstance:
     - target: {fileID: 2135978522893834950, guid: a2d7a06f8a66c9245a6cfb2d84b01909, type: 3}
       propertyPath: m_Name
       value: Wall(5x5) (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2135978522893834950, guid: a2d7a06f8a66c9245a6cfb2d84b01909, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a2d7a06f8a66c9245a6cfb2d84b01909, type: 3}
@@ -340,6 +356,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Wall(5x5) (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 2135978522893834950, guid: a2d7a06f8a66c9245a6cfb2d84b01909, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a2d7a06f8a66c9245a6cfb2d84b01909, type: 3}
 --- !u!4 &994016383909758326 stripped
@@ -401,6 +421,10 @@ PrefabInstance:
     - target: {fileID: 2135978522893834950, guid: a2d7a06f8a66c9245a6cfb2d84b01909, type: 3}
       propertyPath: m_Name
       value: Wall(5x5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2135978522893834950, guid: a2d7a06f8a66c9245a6cfb2d84b01909, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a2d7a06f8a66c9245a6cfb2d84b01909, type: 3}
