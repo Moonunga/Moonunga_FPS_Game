@@ -23,7 +23,7 @@ public class playerController : MonoBehaviour
     private Vector3 playerVelocity;
     private int timesJumped;
     bool isShooting;
-    int selectGun;
+    int selectGun = 1;
 
     private void Start()
     {
