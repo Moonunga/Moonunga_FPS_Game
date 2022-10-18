@@ -34,12 +34,10 @@ public class gameManager : MonoBehaviour
             isPaused = !isPaused;
             pauseMenu.SetActive(isPaused);
 
-
             if (isPaused)
                 Pause();
             else
                 UnPause();
-
         }
     }
     public void Pause()
