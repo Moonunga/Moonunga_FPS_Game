@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class playerController : MonoBehaviour
+public class playerController : MonoBehaviour ,IDamage
 {
     [Header("-----Components---------")]
     [SerializeField] CharacterController controller;
@@ -12,6 +12,7 @@ public class playerController : MonoBehaviour
     [SerializeField] float jumpHeight ;
     [SerializeField] float gravityValue ;
     [SerializeField] int jumpsMax;
+    [SerializeField] int HP;
 
     [Header("------Gun stats-------")]
     [SerializeField] float shootRate;
@@ -19,6 +20,7 @@ public class playerController : MonoBehaviour
     [SerializeField] int shootDamage;
     [SerializeField] GameObject gunModel;
     [SerializeField] List<gunStats> gunStatList = new List<gunStats> ();
+    
 
     private Vector3 playerVelocity;
     private int timesJumped;
@@ -111,6 +113,18 @@ public class playerController : MonoBehaviour
                 gunModel.GetComponent<MeshFilter>().sharedMesh = gunStatList[selectGun].Model.GetComponent<MeshFilter>().sharedMesh;
                 gunModel.GetComponent<MeshRenderer>().sharedMaterial = gunStatList[selectGun].Model.GetComponent<MeshRenderer>().sharedMaterial;
             }
+        }
+    }
+
+    public void takeDamage(int dmg)
+    {
+        HP -= dmg;
+        // agent.SetDestination(gameManager.instance.player.transform.position);
+        StartCoroutine(gameManager.instance.playerDamage());
+        //StartCoroutine(flashDamage());
+        if (HP <= 0)
+        {
+            
         }
     }
 

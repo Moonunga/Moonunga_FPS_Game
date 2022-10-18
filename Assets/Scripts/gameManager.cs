@@ -12,6 +12,8 @@ public class gameManager : MonoBehaviour
 
     [Header("------UI-----------")]
     public GameObject pauseMenu;
+    public GameObject playerDamageFlash;
+
 
     public bool isPaused;
 
@@ -54,4 +56,10 @@ public class gameManager : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
     }
 
+    public IEnumerator playerDamage()
+    {
+        playerDamageFlash.SetActive(true);
+        yield return new WaitForSeconds(0.1f);
+        playerDamageFlash.SetActive(false);
+    }
 }

@@ -521,7 +521,7 @@ GameObject:
   m_Component:
   - component: {fileID: 939574453708463776}
   m_Layer: 0
-  m_Name: WeaponContainer
+  m_Name: ShootPostion
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -535,7 +535,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 939574453708554944}
   m_LocalRotation: {x: -0.079513475, y: 0.663656, z: 0.74313986, w: -0.031328555}
-  m_LocalPosition: {x: -0.22053517, y: 0.024589777, z: 0.14772435}
+  m_LocalPosition: {x: -1.3932332, y: -0.11309765, z: 0.02540636}
   m_LocalScale: {x: 1, y: 0.99999994, z: 0.99999994}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -593,16 +593,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   agent: {fileID: 2568510399560455789}
   model: {fileID: 0}
-  HP: 5
+  HP: 10
   SpeedChase: 0
   facePlayerSpeed: 0
   sightDist: 0
   roamDist: 0
   headPos: {fileID: 0}
   viewAngle: 0
-  shootRate: 0
-  bullet: {fileID: 0}
-  shootPos: {fileID: 0}
+  shootRate: 1
+  bullet: {fileID: 6451863195726249790, guid: 66ba3e90676f59440bfef54988d30008, type: 3}
+  shootPos: {fileID: 939574453708554944}
 --- !u!195 &2568510399560455789
 NavMeshAgent:
   m_ObjectHideFlags: 0

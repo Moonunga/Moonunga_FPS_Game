@@ -123,11 +123,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 23800000, guid: c37b7cacabe140b4f8efcdbba6f05f8e, type: 2}
---- !u!195 &26407519 stripped
-NavMeshAgent:
-  m_CorrespondingSourceObject: {fileID: 2568510399560455789, guid: d5195369674770948a088bbb80ba6052, type: 3}
-  m_PrefabInstance: {fileID: 939574453691941674}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -229,10 +224,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1083924470, guid: d69f3030951b7b14e8ec5770588fd45e, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 2226280222068838593, guid: d69f3030951b7b14e8ec5770588fd45e, type: 3}
       propertyPath: m_Name
       value: UI
@@ -378,30 +369,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy1
       objectReference: {fileID: 0}
-    - target: {fileID: 939574453715988855, guid: d5195369674770948a088bbb80ba6052, type: 3}
-      propertyPath: agent
-      value: 
-      objectReference: {fileID: 26407519}
-    - target: {fileID: 2568510399560455789, guid: d5195369674770948a088bbb80ba6052, type: 3}
-      propertyPath: m_Radius
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 2568510399560455789, guid: d5195369674770948a088bbb80ba6052, type: 3}
-      propertyPath: m_AutoBraking
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2568510399560455789, guid: d5195369674770948a088bbb80ba6052, type: 3}
-      propertyPath: m_Acceleration
-      value: 50
-      objectReference: {fileID: 0}
-    - target: {fileID: 2568510399560455789, guid: d5195369674770948a088bbb80ba6052, type: 3}
-      propertyPath: m_AngularSpeed
-      value: 600
-      objectReference: {fileID: 0}
-    - target: {fileID: 2568510399560455789, guid: d5195369674770948a088bbb80ba6052, type: 3}
-      propertyPath: m_StoppingDistance
-      value: 8
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d5195369674770948a088bbb80ba6052, type: 3}
 --- !u!1001 &1094439446149887802
@@ -411,34 +378,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 972099606, guid: 8757c05f013b1824b80e066680113091, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 829573663259659614, guid: 8757c05f013b1824b80e066680113091, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 2001867649461745201, guid: 8757c05f013b1824b80e066680113091, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 2001867649461745201, guid: 8757c05f013b1824b80e066680113091, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0.42
-      objectReference: {fileID: 0}
-    - target: {fileID: 2001867649461745201, guid: 8757c05f013b1824b80e066680113091, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -0.44
-      objectReference: {fileID: 0}
-    - target: {fileID: 2001867649461745201, guid: 8757c05f013b1824b80e066680113091, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0.52
-      objectReference: {fileID: 0}
-    - target: {fileID: 3199749879933729172, guid: 8757c05f013b1824b80e066680113091, type: 3}
-      propertyPath: m_Mesh
-      value: 
-      objectReference: {fileID: 0}
     - target: {fileID: 5328754515566474306, guid: 8757c05f013b1824b80e066680113091, type: 3}
       propertyPath: m_Name
       value: Player
@@ -487,10 +426,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8197827064037484549, guid: 8757c05f013b1824b80e066680113091, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8757c05f013b1824b80e066680113091, type: 3}
 --- !u!1001 &1677300973470075745
@@ -500,26 +435,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 784327269703759298, guid: 00338718813643645a4de35c2384468c, type: 3}
-      propertyPath: m_NavMeshLayer
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 784327270284266873, guid: 00338718813643645a4de35c2384468c, type: 3}
-      propertyPath: m_NavMeshLayer
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 784327270285427361, guid: 00338718813643645a4de35c2384468c, type: 3}
-      propertyPath: m_NavMeshLayer
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 784327270453953402, guid: 00338718813643645a4de35c2384468c, type: 3}
-      propertyPath: m_NavMeshLayer
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 784327270457977206, guid: 00338718813643645a4de35c2384468c, type: 3}
-      propertyPath: m_NavMeshLayer
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 933724795164850184, guid: 00338718813643645a4de35c2384468c, type: 3}
       propertyPath: m_Name
       value: Level-Test
@@ -567,10 +482,6 @@ PrefabInstance:
     - target: {fileID: 4450629013949683421, guid: 00338718813643645a4de35c2384468c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5067547945651316880, guid: 00338718813643645a4de35c2384468c, type: 3}
-      propertyPath: m_NavMeshLayer
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 00338718813643645a4de35c2384468c, type: 3}
@@ -686,10 +597,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: TestFloor
       objectReference: {fileID: 0}
-    - target: {fileID: 8695083237761157136, guid: 3e7ff2d5b2cef144ea48cc449543ceab, type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 8
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3e7ff2d5b2cef144ea48cc449543ceab, type: 3}
 --- !u!1001 &4283529741689599741
@@ -800,10 +707,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2844449885027132785, guid: 43e1d4a9ee09d194080dbe5d7ad099da, type: 3}
-      propertyPath: gunstat
-      value: 
-      objectReference: {fileID: 11400000, guid: 787f36a0ea545254ea65c9c3a015e628, type: 2}
     - target: {fileID: 2844449885027132789, guid: 43e1d4a9ee09d194080dbe5d7ad099da, type: 3}
       propertyPath: m_Name
       value: Sinper

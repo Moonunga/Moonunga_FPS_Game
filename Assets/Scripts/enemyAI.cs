@@ -46,6 +46,9 @@ public class enemyAI : MonoBehaviour , IDamage
     void Update()
     {
         agent.SetDestination(gameManager.instance.player.transform.position);
+
+        if (!isShooting)
+            StartCoroutine(shoot());
         //if (agent.enabled)
         //{
         //    if (playerInRange)
@@ -122,7 +125,6 @@ public class enemyAI : MonoBehaviour , IDamage
     {
         isShooting = true;
         Instantiate(bullet, shootPos.transform.position, transform.rotation);
-
         yield return new WaitForSeconds(shootRate);
         isShooting = false;
 
