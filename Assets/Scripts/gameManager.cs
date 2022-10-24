@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class gameManager : MonoBehaviour
 {
@@ -12,7 +13,9 @@ public class gameManager : MonoBehaviour
 
     [Header("------UI-----------")]
     public GameObject pauseMenu;
+    public GameObject DeadMenu;
     public GameObject playerDamageFlash;
+    public Image playerHPBar;
 
 
     public bool isPaused;

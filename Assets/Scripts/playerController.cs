@@ -26,10 +26,11 @@ public class playerController : MonoBehaviour ,IDamage
     private int timesJumped;
     bool isShooting;
     int selectGun ;
+    int HPori;
 
     private void Start()
     {
-
+        HPori = HP;
     }
 
     void Update()
@@ -119,12 +120,14 @@ public class playerController : MonoBehaviour ,IDamage
     public void takeDamage(int dmg)
     {
         HP -= dmg;
+        gameManager.instance.playerHPBar.fillAmount = (float)HP / (float)HPori;
         // agent.SetDestination(gameManager.instance.player.transform.position);
         StartCoroutine(gameManager.instance.playerDamage());
         //StartCoroutine(flashDamage());
         if (HP <= 0)
         {
-            
+            gameManager.instance.DeadMenu.SetActive(true);
+            gameManager.instance.Pause();
         }
     }
 
