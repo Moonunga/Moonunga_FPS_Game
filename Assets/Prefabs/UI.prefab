@@ -51,7 +51,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 0}
   playerScript: {fileID: 0}
+  spawnPosition: {fileID: 0}
   pauseMenu: {fileID: 1083924470}
+  DeadMenu: {fileID: 2026902688795631627}
   playerDamageFlash: {fileID: 66651263}
   playerHPBar: {fileID: 3465146517866214697}
   isPaused: 0
@@ -612,7 +614,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &5290634172897903330
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1210,7 +1212,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 8309399557111438054}
         m_TargetAssemblyTypeName: buttonFunction, Assembly-CSharp
-        m_MethodName: resume
+        m_MethodName: respawn
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

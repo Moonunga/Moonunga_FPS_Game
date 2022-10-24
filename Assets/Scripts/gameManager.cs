@@ -10,6 +10,7 @@ public class gameManager : MonoBehaviour
     [Header("------Player Stuff-------")]
     public GameObject player;
     public playerController playerScript;
+    public GameObject spawnPosition;
 
     [Header("------UI-----------")]
     public GameObject pauseMenu;
@@ -25,6 +26,7 @@ public class gameManager : MonoBehaviour
         instance = this;
         player = GameObject.FindGameObjectWithTag("Player");
         playerScript = player.GetComponent<playerController>();
+        spawnPosition = GameObject.FindGameObjectWithTag("Spawn Position");
     }
 
     void Start()

@@ -24,10 +24,11 @@ public class buttonFunction : MonoBehaviour
         Application.Quit();
     }
 
-    //public void respawn()
-    //{
-    //    gameManager.instance.playerScript.respawn();
-    //    gameManager.instance.cursorUnLockPause();
-    //}
+    public void respawn()
+    {
+        gameManager.instance.playerScript.respawn();
+        gameManager.instance.UnPause();
+        gameManager.instance.DeadMenu.SetActive(false);
+    }
 
 }

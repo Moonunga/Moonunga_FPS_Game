@@ -31,6 +31,7 @@ public class playerController : MonoBehaviour ,IDamage
     private void Start()
     {
         HPori = HP;
+        respawn();
     }
 
     void Update()
@@ -120,15 +121,29 @@ public class playerController : MonoBehaviour ,IDamage
     public void takeDamage(int dmg)
     {
         HP -= dmg;
-        gameManager.instance.playerHPBar.fillAmount = (float)HP / (float)HPori;
+        updatePlayerHUD();
         // agent.SetDestination(gameManager.instance.player.transform.position);
         StartCoroutine(gameManager.instance.playerDamage());
         //StartCoroutine(flashDamage());
         if (HP <= 0)
         {
             gameManager.instance.DeadMenu.SetActive(true);
-            gameManager.instance.Pause();
+            gameManager.instance.Pause(); 
         }
+    }
+
+    void updatePlayerHUD()
+    {
+        gameManager.instance.playerHPBar.fillAmount = (float)HP / (float)HPori;
+    }
+
+    public void respawn()
+    {
+        controller.enabled = false;
+        HP = HPori;
+        updatePlayerHUD();
+        transform.position = gameManager.instance.spawnPosition.transform.position;
+        controller.enabled = true;
     }
 
 }
