@@ -555,7 +555,8 @@ GameObject:
   - component: {fileID: 2568510399560455789}
   - component: {fileID: 939574453715988854}
   - component: {fileID: 939574453715988852}
-  m_Layer: 0
+  - component: {fileID: 126543738}
+  m_Layer: 7
   m_Name: Enemy1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -592,7 +593,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   agent: {fileID: 2568510399560455789}
-  model: {fileID: 0}
+  model: {fileID: 939574453711671222}
   HP: 10
   SpeedChase: 0
   facePlayerSpeed: 0
@@ -638,7 +639,7 @@ Animator:
   m_Controller: {fileID: 0}
   m_CullingMode: 1
   m_UpdateMode: 0
-  m_ApplyRootMotion: 1
+  m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0
   m_WarningMessage: 
@@ -659,6 +660,19 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 1, z: 0}
+--- !u!135 &126543738
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 939574453708554946}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 15
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &939574453708554948
 GameObject:
   m_ObjectHideFlags: 0

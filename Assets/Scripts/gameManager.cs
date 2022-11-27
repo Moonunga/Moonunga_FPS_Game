@@ -7,6 +7,8 @@ public class gameManager : MonoBehaviour
 {
     public static gameManager instance;
 
+    public int enemyNumber;
+
     [Header("------Player Stuff-------")]
     public GameObject player;
     public playerController playerScript;
@@ -15,6 +17,8 @@ public class gameManager : MonoBehaviour
     [Header("------UI-----------")]
     public GameObject pauseMenu;
     public GameObject DeadMenu;
+    public GameObject WinMenu;
+
     public GameObject playerDamageFlash;
     public Image playerHPBar;
 
@@ -36,7 +40,7 @@ public class gameManager : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetButtonDown("Cancel"))
+        if (Input.GetButtonDown("Cancel")&& !DeadMenu.activeSelf && !WinMenu.activeSelf)
         {
             isPaused = !isPaused;
             pauseMenu.SetActive(isPaused);
@@ -66,5 +70,15 @@ public class gameManager : MonoBehaviour
         playerDamageFlash.SetActive(true);
         yield return new WaitForSeconds(0.1f);
         playerDamageFlash.SetActive(false);
+    }
+
+    public void checkEnemyTotal()
+    {
+        enemyNumber--;
+        if (enemyNumber <= 0)
+        {
+            WinMenu.SetActive(true);
+            Pause();
+        }
     }
 }

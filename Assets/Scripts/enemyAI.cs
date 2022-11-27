@@ -9,7 +9,7 @@ public class enemyAI : MonoBehaviour , IDamage
     [Header("----- Components -----")]
     [SerializeField] NavMeshAgent agent;
     [SerializeField] Renderer model;
-
+    
     [Header("----- Enemy stats -----")]
     [SerializeField] int HP;
     [SerializeField] int SpeedChase;
@@ -35,7 +35,7 @@ public class enemyAI : MonoBehaviour , IDamage
     // Start is called before the first frame update
     void Start()
     {
-       // gameManager.instance.enemyNumber++;
+        gameManager.instance.enemyNumber++;
         //stoppingDistOrig = agent.stoppingDistance;
         //stratingPos = transform.position;
         //roam();
@@ -45,10 +45,14 @@ public class enemyAI : MonoBehaviour , IDamage
     // Update is called once per frame
     void Update()
     {
-        agent.SetDestination(gameManager.instance.player.transform.position);
+        if (agent.enabled && playerInRange)
+        {
+            agent.SetDestination(gameManager.instance.player.transform.position);
 
-        if (!isShooting)
-            StartCoroutine(shoot());
+            if (!isShooting)
+                StartCoroutine(shoot());
+        }
+       
         //if (agent.enabled)
         //{
         //    if (playerInRange)
@@ -70,7 +74,7 @@ public class enemyAI : MonoBehaviour , IDamage
         StartCoroutine(flashDamage());
         if (HP <= 0)
         {
-           // gameManager.instance.checkEnemyTotal();
+            gameManager.instance.checkEnemyTotal();
             Destroy(gameObject);
         }
     }
