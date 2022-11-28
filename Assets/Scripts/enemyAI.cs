@@ -26,7 +26,7 @@ public class enemyAI : MonoBehaviour , IDamage
 
     bool isShooting;
     bool playerInRange;
-    Vector3 playerDir;
+    Vector3 playerDir; //direction
     float stoppingDistOrig;
     Vector3 stratingPos;
     float angle;
@@ -36,6 +36,7 @@ public class enemyAI : MonoBehaviour , IDamage
     void Start()
     {
         gameManager.instance.enemyNumber++;
+        gameManager.instance.enemyCountText.text = gameManager.instance.enemyNumber.ToString("F0");// f0 is float
         //stoppingDistOrig = agent.stoppingDistance;
         //stratingPos = transform.position;
         //roam();
@@ -47,10 +48,10 @@ public class enemyAI : MonoBehaviour , IDamage
     {
         if (agent.enabled && playerInRange)
         {
-            agent.SetDestination(gameManager.instance.player.transform.position);
+            playerDir = gameManager.instance.player.transform.position - headPos.transform.position;
 
-            if (!isShooting)
-                StartCoroutine(shoot());
+            canSeePlayer();
+
         }
        
         //if (agent.enabled)
@@ -64,6 +65,38 @@ public class enemyAI : MonoBehaviour , IDamage
         //}
         //else if (agent.remainingDistance < 0.1f && agent.destination != gameManager.instance.player.transform.position)
         //    roam();
+    }
+
+    void canSeePlayer()
+    {
+        RaycastHit hit;
+
+        if (Physics.Raycast(headPos.transform.position, playerDir, out hit, sightDist))
+        {
+            Debug.DrawRay(headPos.transform.position, playerDir);
+            if (hit.collider.CompareTag("Player") && angle <= viewAngle)
+            {
+               //agent.speed = SpeedChase;
+               // agent.stoppingDistance = stoppingDistOrig;
+                agent.SetDestination(gameManager.instance.player.transform.position);
+
+                if (!isShooting)
+                    StartCoroutine(shoot());
+
+                if (agent.remainingDistance < agent.stoppingDistance)
+                    facePlayer();
+
+            }
+           
+
+           
+        }
+    }
+    void facePlayer()
+    {
+        playerDir.y = 0;
+        Quaternion rotation = Quaternion.LookRotation(playerDir);
+        transform.rotation = Quaternion.Lerp(transform.rotation, rotation, Time.deltaTime * facePlayerSpeed);
     }
 
     public void takeDamage(int dmg)
@@ -95,35 +128,10 @@ public class enemyAI : MonoBehaviour , IDamage
         agent.SetPath(path);
     }
 
-    //void canSeePlayer()
-    //{
-
-    //    RaycastHit hit;
-    //    if (Physics.Raycast(headPos.transform.position, playerDir, out hit, sightDist))
-    //    {
-    //        Debug.DrawRay(headPos.transform.position, playerDir);
-    //        if (hit.collider.CompareTag("Player") && angle <= viewAngle)
-    //        {
-    //            agent.speed = SpeedChase;
-    //            agent.stoppingDistance = stoppingDistOrig;
-    //            agent.SetDestination(gameManager.instance.player.transform.position);
-
-    //            if (agent.remainingDistance < agent.stoppingDistance)
-    //                facePlayer();
-
-    //            if (!isShooting)
-    //                StartCoroutine(shoot());
-    //        }
-    //    }
-    //}
+    
 
 
-    //void facePlayer()
-    //{
-    //    playerDir.y = 0;
-    //    Quaternion rotation = Quaternion.LookRotation(playerDir);
-    //    transform.rotation = Quaternion.Lerp(transform.rotation, rotation, Time.deltaTime * facePlayerSpeed);
-    //}
+   
 
     IEnumerator shoot()
     {

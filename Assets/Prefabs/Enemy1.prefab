@@ -596,10 +596,10 @@ MonoBehaviour:
   model: {fileID: 939574453711671222}
   HP: 10
   SpeedChase: 0
-  facePlayerSpeed: 0
-  sightDist: 0
+  facePlayerSpeed: 8
+  sightDist: 50
   roamDist: 0
-  headPos: {fileID: 0}
+  headPos: {fileID: 939574453708554930}
   viewAngle: 0
   shootRate: 1
   bullet: {fileID: 6451863195726249790, guid: 66ba3e90676f59440bfef54988d30008, type: 3}

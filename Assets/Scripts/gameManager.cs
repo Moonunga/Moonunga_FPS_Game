@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+
 public class gameManager : MonoBehaviour
 {
     public static gameManager instance;
@@ -18,9 +19,9 @@ public class gameManager : MonoBehaviour
     public GameObject pauseMenu;
     public GameObject DeadMenu;
     public GameObject WinMenu;
-
     public GameObject playerDamageFlash;
     public Image playerHPBar;
+    public Text enemyCountText;
 
 
     public bool isPaused;
@@ -75,6 +76,7 @@ public class gameManager : MonoBehaviour
     public void checkEnemyTotal()
     {
         enemyNumber--;
+        enemyCountText.text = enemyNumber.ToString("f0");
         if (enemyNumber <= 0)
         {
             WinMenu.SetActive(true);
