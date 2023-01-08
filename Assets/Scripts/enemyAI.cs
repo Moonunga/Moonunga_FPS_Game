@@ -37,7 +37,7 @@ public class enemyAI : MonoBehaviour , IDamage
     {
         gameManager.instance.enemyNumber++;
         gameManager.instance.enemyCountText.text = gameManager.instance.enemyNumber.ToString("F0");// f0 is float
-        //stoppingDistOrig = agent.stoppingDistance;
+        stoppingDistOrig = agent.stoppingDistance;
         //stratingPos = transform.position;
         //roam();
         //speedPatrol = agent.speed;
@@ -77,7 +77,7 @@ public class enemyAI : MonoBehaviour , IDamage
             if (hit.collider.CompareTag("Player") && angle <= viewAngle)
             {
                //agent.speed = SpeedChase;
-               // agent.stoppingDistance = stoppingDistOrig;
+                agent.stoppingDistance = stoppingDistOrig;
                 agent.SetDestination(gameManager.instance.player.transform.position);
 
                 if (!isShooting)
@@ -88,9 +88,8 @@ public class enemyAI : MonoBehaviour , IDamage
 
             }
            
-
-           
         }
+       
     }
     void facePlayer()
     {
@@ -102,7 +101,6 @@ public class enemyAI : MonoBehaviour , IDamage
     public void takeDamage(int dmg)
     {
         HP -= dmg;
-       // agent.SetDestination(gameManager.instance.player.transform.position);
 
         StartCoroutine(flashDamage());
         if (HP <= 0)
@@ -150,7 +148,7 @@ public class enemyAI : MonoBehaviour , IDamage
         yield return new WaitForSeconds(0.25f);
         model.material.color = Color.white;
         agent.enabled = true;
-
+        agent.SetDestination(gameManager.instance.player.transform.position);
     }
 
     public void OnTriggerEnter(Collider other)
