@@ -72,7 +72,7 @@ public class playerController : MonoBehaviour ,IDamage
             RaycastHit hit;
             if (Physics.Raycast(Camera.main.ViewportPointToRay(new Vector2(0.5f, 0.5f)), out hit, shootDist))
             {
-                if (hit.collider.GetComponent<IDamage>() != null) //여기 무슨말 하는지 잘모르겠네
+                if (hit.collider.GetComponent<IDamage>() != null) 
                     hit.collider.GetComponent<IDamage>().takeDamage(shootDamage);
             }
             yield return new WaitForSeconds(shootRate);
