@@ -12,7 +12,7 @@ public class enemyAI : MonoBehaviour , IDamage
     
     [Header("----- Enemy stats -----")]
     [SerializeField] int HP;
-    [SerializeField] int SpeedChase;
+    [SerializeField] int speedChase;
     [SerializeField] int facePlayerSpeed;
     [SerializeField] int sightDist;
     [SerializeField] int roamDist;
@@ -38,45 +38,36 @@ public class enemyAI : MonoBehaviour , IDamage
         gameManager.instance.enemyNumber++;
         gameManager.instance.enemyCountText.text = gameManager.instance.enemyNumber.ToString("F0");// f0 is float
         stoppingDistOrig = agent.stoppingDistance;
-        //stratingPos = transform.position;
-        //roam();
-        //speedPatrol = agent.speed;
+        stratingPos = transform.position;
+        speedPatrol = agent.speed;
+        roam();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (agent.enabled && playerInRange)
+        if (agent.enabled)
         {
-            playerDir = gameManager.instance.player.transform.position - headPos.transform.position;
-
-            canSeePlayer();
-
+            if (playerInRange)
+            {
+                playerDir = gameManager.instance.player.transform.position - headPos.transform.position;
+                angle = Vector3.Angle(playerDir, transform.forward);
+                canSeePlayer();
+            }
+            else if (agent.remainingDistance < 0.1f && agent.destination != gameManager.instance.player.transform.position)
+                roam();
         }
-       
-        //if (agent.enabled)
-        //{
-        //    if (playerInRange)
-        //    {
-        //        playerDir = gameManager.instance.player.transform.position - transform.position;
-        //        angle = Vector3.Angle(playerDir, transform.forward);
-        //        // canSeePlayer();
-        //    }
-        //}
-        //else if (agent.remainingDistance < 0.1f && agent.destination != gameManager.instance.player.transform.position)
-        //    roam();
     }
 
     void canSeePlayer()
     {
         RaycastHit hit;
-
         if (Physics.Raycast(headPos.transform.position, playerDir, out hit, sightDist))
         {
             Debug.DrawRay(headPos.transform.position, playerDir);
             if (hit.collider.CompareTag("Player") && angle <= viewAngle)
             {
-               //agent.speed = SpeedChase;
+                agent.speed = speedChase;
                 agent.stoppingDistance = stoppingDistOrig;
                 agent.SetDestination(gameManager.instance.player.transform.position);
 
@@ -121,16 +112,11 @@ public class enemyAI : MonoBehaviour , IDamage
         NavMeshHit hit;
         NavMesh.SamplePosition(randomDir, out hit, 1, 1);
         NavMeshPath path = new NavMeshPath();
-
+               
         agent.CalculatePath(hit.position, path);
         agent.SetPath(path);
     }
-
-    
-
-
-   
-
+         
     IEnumerator shoot()
     {
         isShooting = true;
